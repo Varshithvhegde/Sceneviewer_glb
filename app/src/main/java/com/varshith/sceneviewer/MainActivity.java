@@ -1,8 +1,10 @@
 package com.varshith.sceneviewer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
                 Uri intentUri =
                         Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
                                 .appendQueryParameter("file", "https://firebasestorage.googleapis.com/v0/b/new-touch-reno.appspot.com/o/Bed.glb?alt=media&token=9f2e3a3e-94a7-4f0b-86ab-3f712aee32e1")
-                                .appendQueryParameter("mode", "ar_only")
+                                .appendQueryParameter("mode", "ar_preferred")
+                                .appendQueryParameter("title","Sample Ar mode")
+                                .appendQueryParameter("link","https://Varshithvhegde.me")
                                 .build();
                 sceneViewerIntent.setData(intentUri);
 //                sceneViewerIntent.setPackage("com.google.ar.core");
@@ -30,4 +34,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
